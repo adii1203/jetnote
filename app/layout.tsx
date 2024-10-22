@@ -5,15 +5,9 @@ import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const SNPro = localFont({
+  src: "./fonts/SNPro-Regular.woff",
+  variable: "--font-snpro",
 });
 
 export const metadata: Metadata = {
@@ -28,8 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${SNPro.variable} font-snpro antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark">
           <SidebarProvider>
             <AppSidebar />
