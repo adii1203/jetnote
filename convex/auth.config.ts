@@ -1,7 +1,7 @@
 export default {
   providers: [
     {
-      domain: "https://dominant-finch-48.clerk.accounts.dev",
+      domain: process.env.AUTH0_DOMAIN,
       applicationID: "convex",
     },
   ],
