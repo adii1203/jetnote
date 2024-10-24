@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
 import { ThemeProvider } from "@/components/theme-provider";
+import { ClerkProvider } from "@clerk/nextjs";
+import { ConvexClientProvider } from "./ConvexClientProvider";
 
 const SNPro = localFont({
   src: "./fonts/SNPro-Regular.woff",
@@ -21,20 +21,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${SNPro.variable} font-snpro antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="dark">
-          <SidebarProvider>
-            <AppSidebar />
-            <main className="w-full">
-              <div className="sticky bg-background top-0 border w-full p-4">
-                <SidebarTrigger />
-              </div>
-              <div className="w-full container mx-auto p-4">{children}</div>
-            </main>
-          </SidebarProvider>
-        </ThemeProvider>
-      </body>
-    </html>
+    <ClerkProvider dynamic>
+      <ConvexClientProvider>
+        <html lang="en">
+          <body className={`${SNPro.variable} font-snpro antialiased`}>
+            <ThemeProvider attribute="class" defaultTheme="dark">
+              <main>{children}</main>
+            </ThemeProvider>
+          </body>
+        </html>
+      </ConvexClientProvider>
+    </ClerkProvider>
   );
 }
