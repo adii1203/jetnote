@@ -44,7 +44,7 @@ export default function Calendar() {
 
   return (
     <div className="">
-      <div className="w-[17rem] border rounded-md p-2 mx-auto">
+      <div className="w-[17rem] rounded-md p-2 mx-auto">
         <div className=" ">
           <div className="">
             <div className="flex items-center">
@@ -94,10 +94,9 @@ export default function Calendar() {
                     type="button"
                     onClick={() => setSelectedDay(day)}
                     className={cn(
-                      isEqual(day, selectedDay) && "text-white",
                       !isEqual(day, selectedDay) &&
                         isToday(day) &&
-                        "text-red-500 bg-red-500/10 hover:bg-red-500",
+                        "text-red-500",
                       !isEqual(day, selectedDay) &&
                         !isToday(day) &&
                         isSameMonth(day, firstDayCurrentMonth) &&
@@ -106,14 +105,16 @@ export default function Calendar() {
                         !isToday(day) &&
                         !isSameMonth(day, firstDayCurrentMonth) &&
                         "text-accent-foreground",
-                      isEqual(day, selectedDay) && isToday(day) && "bg-red-500",
+                      isEqual(day, selectedDay) &&
+                        isToday(day) &&
+                        "bg-red-500/80 text-white",
                       isEqual(day, selectedDay) &&
                         !isToday(day) &&
-                        "bg-secondary",
+                        "bg-green-400/80 text-white",
                       !isEqual(day, selectedDay) && "hover:bg-muted",
                       (isEqual(day, selectedDay) || isToday(day)) &&
                         "font-semibold",
-                      "mx-auto flex h-8 w-8 items-center justify-center rounded-full"
+                      "mx-auto flex h-8 w-8 items-center justify-center rounded-xl"
                     )}>
                     <time dateTime={format(day, "yyyy-MM-dd")}>
                       {format(day, "d")}
