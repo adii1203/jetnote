@@ -6,6 +6,7 @@ export default clerkMiddleware(async (auth, req) => {
   if (isProtectedRouts(req)) {
     await auth.protect();
   }
+  // redirect to /v/colloction is user is authenticated
 });
 
 export const config = {
