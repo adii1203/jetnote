@@ -1,0 +1,15 @@
+.ProseMirror {
+  @apply w-full font-snpro rounded-lg min-h-20 outline-none px-2;
+}
+p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  @apply text-accent-foreground/30 font-medium pointer-events-none float-left h-0;
+}
+
+.ProseMirror ul {
+  @apply pl-6 list-disc;
+}
+
+.ProseMirror ol {
+  @apply pl-6 list-decimal;
+}
