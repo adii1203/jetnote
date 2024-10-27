@@ -1,11 +1,11 @@
-"use client";
-
 import { SignedIn, UserButton } from "@clerk/nextjs";
 
 export function NavUser() {
   return (
-    <SignedIn>
-      <UserButton showName />
-    </SignedIn>
+    <div className="text-foreground">
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
+    </div>
   );
 }
