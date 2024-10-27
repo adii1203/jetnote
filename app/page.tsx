@@ -7,9 +7,9 @@ import { buttonVariants } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="w-full font-snpro min-h-screen flex items-center justify-center p-4 bg-[url('/bg.webp')] bg-cover bg-center bg-no-repeat relative overflow-hidden">
+    <div className="w-full font-snpro min-h-screen flex items-center justify-center p-4 bg-cover bg-center bg-no-repeat relative overflow-hidden">
       <div
-        className="absolute inset-0 bg-[url('/bg.webp')] bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ filter: "blur(5px)" }}></div>
       <DotPattern className="z-0" />
       <div className="max-w-7xl w-full flex flex-col lg:flex-row items-center justify-between rounded-xl p-4 sm:p-8 relative z-10">

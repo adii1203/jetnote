@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ConvexClientProvider } from "./ConvexClientProvider";
 
@@ -25,9 +24,7 @@ export default function RootLayout({
       <ConvexClientProvider>
         <html lang="en">
           <body className={`${SNPro.variable} font-snpro antialiased`}>
-            <ThemeProvider attribute="class" defaultTheme="dark">
-              <main>{children}</main>
-            </ThemeProvider>
+            <main>{children}</main>
           </body>
         </html>
       </ConvexClientProvider>
